@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: #2c3e50;
+            padding: 20px 0;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+        }
+
+        .content {
+            margin-left: 280px;
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .welcome-text {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .welcome-text h1 {
+            font-size: 3.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .welcome-text p {
+            font-size: 1.5rem;
+            color: #7f8c8d;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 25px;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            margin-bottom: 5px;
+        }
+
+        .menu-item i {
+            margin-right: 15px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .menu-item:hover {
+            background-color: #34495e;
+            border-left-color: #3498db;
+            padding-left: 30px;
+        }
+
+        .menu-item.active {
+            background-color: #34495e;
+            border-left-color: #3498db;
+        }
+
+        .logo {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #34495e;
+        }
+
+        .logo h2 {
+            color: #ecf0f1;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .separator {
+            height: 1px;
+            background-color: #34495e;
+            margin: 15px 0;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 70px;
+                padding: 20px 0;
+            }
+
+            .menu-item span {
+                display: none;
+            }
+
+            .menu-item i {
+                margin: 0;
+                font-size: 1.2rem;
+            }
+
+            .content {
+                margin-left: 70px;
+            }
+
+            .logo h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <h2>GNote</h2>
+        </div>
+        <a href="index.html" class="menu-item">
+            <i class="fas fa-home"></i>
+            <span>Accueil</span>
+        </a>
+        <a href="ajouter_etudiant.jsp" class="menu-item">
+            <i class="fas fa-user-plus"></i>
+            <span>Ajouter étudiant</span>
+        </a>
+        <a href="insert_note.jsp" class="menu-item">
+            <i class="fas fa-file"></i>
+            <span>Inserer Note</span>
+        </a>
+        <a href="insert_annee_scolaire.jsp" class="menu-item">
+            <i class="fas fa-file"></i>
+            <span>Inserer Annee Scolaire</span>
+        </a>
+
+        <a href="insert_droit.jsp" class="menu-item">
+            <i class="fas fa-file"></i>
+            <span>Inserer droit inscription</span>
+        </a>
+
+        <a href="insertModePaiementE.jsp" class="menu-item">
+            <i class="fas fa-file"></i>
+            <span>Inserer Mode Paiement Etudiant</span>
+        </a>
+
+        <a href="insert_ecolage.jsp" class="menu-item">
+            <i class="fas fa-file"></i>
+            <span>Inserer Ecolage</span>
+        </a>
+        <a href="payement_ecolage.jsp" class="menu-item">
+            <i class="fas fa-file"></i>
+            <span>Payement Ecolage</span>
+        </a>
+        <a href="liste_general.jsp" class="menu-item">
+            <i class="fas fa-list"></i>
+            <span>Selection Reflect</span>
+        </a>
+        <a href="fiche.jsp" class="menu-item">
+            <i class="fas fa-file-alt"></i>
+            <span>Relevé de Notes</span>
+        </a>
+
+        <div class="separator"></div>
+
+        <a href="listeEtudiant.jsp" class="menu-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Liste Etudiants</span>
+        </a>
+        <a href="liste_deliberation.jsp" class="menu-item">
+            <i class="fas fa-gavel"></i>
+            <span>Délibération</span>
+        </a>
+
+        <div class="separator"></div>
+
+        <a href="modif_matieres.jsp" class="menu-item">
+            <i class="fas fa-edit"></i>
+            <span>Modifier matières</span>
+        </a>
+
+        <div class="separator"></div>
+
+        <a href="liste_payement_ecolage.jsp" class="menu-item">
+            <i class="fas fa-file"></i>
+            <span>Liste Payement Ecolage</span>
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="welcome-text">
+            <h1>Bienvenue sur GNote</h1>
+            <p>Logiciel de gestion des notes</p>
+        </div>
+    </div>
+</body>
+</html>
